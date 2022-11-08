@@ -47,20 +47,32 @@ Anyway，这里我们假设已经获取了私钥，比如在上述命令中生�
 #### 建立连接
 我用clion链接，所以大致流程如下，记得不要用Community Version，因为Community Version不支持ssh连接
 首先找到Tools->Deployment->Configuration，然后点击+号，选择SFTP，然后填写相关信息，如下图
+
 ![image](https://user-images.githubusercontent.com/46698520/200650874-78a75d95-928a-4992-a576-00325232537e.png)
+
 ![image](https://user-images.githubusercontent.com/46698520/200651232-fabf9df1-3799-4530-8d35-2da19c998a66.png)
+
 然后放进去你的公共ip，端口(一般是22)，用户名(这个你在网站portal一般能够找到)，如果用密码则填入密码，paraphrase为空，如果是私钥则填入私钥在本地
 路径，如图所示
+
 ![image](https://user-images.githubusercontent.com/46698520/200651443-5c984555-062e-4b46-a100-1615dca988bd.png)
+
 然后点击Test Connection，如果成功则会显示Successfully Connected,如图
+
 ![image](https://user-images.githubusercontent.com/46698520/200651767-49d9a937-20cb-4f8b-9291-e5c91e21e712.png)
+
 然后退出来根目录，点击auto detect，就好了，现在就可以开始办公了
+
 ![image](https://user-images.githubusercontent.com/46698520/200652246-009cc610-77e1-4900-b988-ecab8a7e143f.png)
+
 #### 建立连接
 我们可以开始试着在虚拟机上写代码了，我们首先看命令行，点击tools->deployment->start ssh session，然后选择我们的机器，点击
 就可以在Terminal里面看到命令行了，如图
+
 ![image](https://user-images.githubusercontent.com/46698520/200653222-0629ac50-2bc7-4486-9e9d-0d750db53fdf.png)
+
 ![image](https://user-images.githubusercontent.com/46698520/200653496-1426605b-c84e-4624-9883-beed85e9d658.png)
+
 然后我们可以用图形化界面打开文件，具体方式是Tools->Deployment->Browse Remote Host，然后选择我们的机器，然后就可以看到图形界面了
 
 打开图形界面，我们可以看到我们的文件，如图，注意我们每次修改之后需要保存，然后点击右上角的sync，就可以同步到服务器上了
