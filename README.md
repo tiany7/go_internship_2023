@@ -23,7 +23,7 @@ devour
 
 [环境搭建](https://github.com/tiany7/go_internship_2023/tree/main/environment_setup)
 
-主流RPC框架及环境搭建
+[后端简单demo搭建](https://github.com/tiany7/go_internship_2023/tree/main/back_end_development_intro)
 
 一个简单的微服务后台
 
