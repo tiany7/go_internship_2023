@@ -21,6 +21,8 @@ devour
 
 ## 项目学习路线（时刻更新中）：
 
+[环境搭建](https://github.com/tiany7/go_internship_2023/tree/main/environment_setup)
+
 主流RPC框架及环境搭建
 
 一个简单的微服务后台
