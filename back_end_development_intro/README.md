@@ -42,8 +42,7 @@ grpc是google开源的rpc框架，我们这里用它来实现rpc的功能.
 让我们把视线移到proto上面，这个文件在/grpc/examples/cpp/helloworld/下面，这个文件是我们rpc的协议文件，我们需要约定好这个文件，然后双方都需要遵守这个协议，这样才能正常通信。
 回到Z聚的对话问题上，proto文件就是我们问z聚的方式，message是我们说出来的话和Z聚回答我们的格式
 service是一个function，说我们说什么样的话，Z聚以怎样的形式回复我们，这个function是通过网络进行通信的
-
-    ```proto
+```proto
     syntax = "proto3";
 
     package helloworld;
@@ -64,7 +63,7 @@ service是一个function，说我们说什么样的话，Z聚以怎样的形式�
     message HelloReply {
       string message = 1;
     }
-    ```
+```
 我们可以看到，这里定义了一个服务，服务里面有一个rpc函数，这个函数的输入是HelloRequest，输出是HelloReply
 定义了一个service，就是我们要say hello，我们希望客户装填hello request内为string的变量，即自己要说的话，
 然后服务端会返回一个reply，即用户这句话的内容。
@@ -123,6 +122,62 @@ bazel-bin/examples/cpp/helloworld/greeter_client
 
 ## 6. 代码分析
 大家可以学习一下代码的写法，现在的理解可以不用到理论层面，只需要会用就行，后面会有更多的内容来讲解
+
+# 简易安装版
+
+考虑到大家的预算有点紧张，所以有个可以bypass内存限制的方法，就是使用bazel自带的http_archive包管理
+和git_repository包管理，这样我们就可以直接从github上拉取代码下来，然后编译，这样本地除了bazel什么都不用安装
+
+文件主要放在了workspace里面，大家可以看一下，具体功能和用法留给大家自己思考。
+
+http_archive和git_repository的主要生效的地方在于，我们在BUILD文件里面的引用，比如我们在BUILD文件里面引用了
+
+假如我们在BUILD文件里面引用了一个文件叫//protos/helloworld.proto的依赖, 我们不能保证这个proto文件在本地，
+所以我们可以把这个proto文件放进一个git项目里，只需要填入git的地址，然后在BUILD文件里面引用就可以了
+
+比如之前我们会在dep栏里引用protos/helloworld.proto，现在我们可以直接在BUILD文件里面引用
+
+```python
+proto_library(
+    name = "helloworld_proto",
+    srcs = ["protos/helloworld.proto"],
+    visibility = ["//visibility:public"],
+)
+```
+
+现在我们把proto文件放到github上一个叫my_dep的repo一级目录里面，然后在BUILD文件里面引用，这样我们就可以直接从github上拉取代码下来了
+
+```python
+git_repository(
+    name = "my_dependency",
+    remote = "https://github.com/tiany7/my_dep.git",
+    commit = "32094895286f499f997bef4324d68f61ea90a41f",
+)
+```
+
+现在我们不需要指定文件本地地址，我们只要指定git + 相对路径就好了
+
+```python
+proto_library(
+    name = "helloworld_proto",
+    srcs = ["@my_dependency//:helloworld.proto"], # 这里的@my_dependency就是git_repository里面的name
+    visibility = ["//visibility:public"],
+)
+```
+
+## 操作流程
+首先安装好bazel其实什么事情都不用干，然后我们实现上述的hello_world程序
+
+我已经写好了，在./demo里面，大家首先进去demo,然后开始编译
+    
+```bash
+    cd demo
+    bazel build //:greeter_server
+    bazel build //:greeter_client
+```
+
+然后在bazel-bin里运行就好了，无需任何额外操作哈
+
 
 ## 7. 思考作业题
 实现一个简单的adder，实现两个数相加，然后返回结果
