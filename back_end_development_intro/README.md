@@ -17,7 +17,7 @@ bazel和cmake都是我们交互的方式，bazel是google开源的，cmake是我
 
 首先安装bazel，记得安装版本为4.0.0，否则无法正常编译
 
-教程: [安装教程](https://docs.bazel.build/versions/0.19.1/install-ubuntu.html)
+教程: [安装教程](https://bazel.build/install/ubuntu)
 
 一切按教程走，唯一需要修改的地方就是，我们要指定安装版本，在install的时候
 
