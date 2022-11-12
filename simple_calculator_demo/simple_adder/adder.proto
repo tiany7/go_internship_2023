@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+
+service Adder {
+  rpc AddTwoNumbers (AddTwoNumbersRequest) returns (AddTwoNumbersReply) {}
+}
+
+message AddTwoNumbersRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message AddTwoNumbersReply {
+  int32 result = 1;
+}
