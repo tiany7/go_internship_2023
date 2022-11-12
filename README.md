@@ -25,6 +25,8 @@ devour
 
 [后端简单demo搭建](https://github.com/tiany7/go_internship_2023/tree/main/back_end_development_intro)
 
+[实现一个简单的A + B Problem](https://github.com/tiany7/go_internship_2023/tree/main/simple_calculator_demo)
+
 一个简单的微服务后台
 
 Webserver & HTTP相关
