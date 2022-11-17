@@ -27,7 +27,7 @@ devour
 
 [实现一个简单的A + B Problem](https://github.com/tiany7/go_internship_2023/tree/main/simple_calculator_demo)
 
-一个简单的微服务后台
+[一个简单的HTTP服务](https://github.com/tiany7/go_internship_2023/tree/main/simple_http_demo)
 
 Webserver & HTTP相关
 
