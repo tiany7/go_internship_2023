@@ -1,4 +1,4 @@
-workspace(name = "myworkspace")
+workspace(name = "go_internship")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
@@ -41,3 +41,4 @@ git_repository(
     remote = "https://github.com/yhirose/cpp-httplib.git",
     commit = "27cd4e6ffeca2c9978ec1df7de3d22b9303a71b4",
 )
+
