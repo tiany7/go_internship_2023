@@ -21,6 +21,8 @@ devour
 
 ## 项目学习路线（时刻更新中）：
 
+[基础知识](https://github.com/tiany7/go_internship_2023/tree/main/basic_knowledge)
+
 [环境搭建](https://github.com/tiany7/go_internship_2023/tree/main/environment_setup)
 
 [后端简单demo搭建](https://github.com/tiany7/go_internship_2023/tree/main/back_end_development_intro)
@@ -36,6 +38,7 @@ Webserver & HTTP相关
 OS专题，实现一个简单的malloc系统
 
 。。。。
+
 
 
 
