@@ -21,7 +21,7 @@ devour
 
 ## 项目学习路线（时刻更新中）：
 
-[基础知识](https://github.com/tiany7/go_internship_2023/tree/main/basic_knowledge)
+[为什么八股这么重要？(必看)](https://github.com/tiany7/go_internship_2023/tree/main/basic_knowledge)
 
 [环境搭建](https://github.com/tiany7/go_internship_2023/tree/main/environment_setup)
 
